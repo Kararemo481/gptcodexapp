@@ -5,29 +5,35 @@ const taskListNode = document.querySelector('#task-list');
 
 const activityItems = [
   {
+    id: 'PR #8',
+    title: '作業ログダッシュボードを作成',
+    meta: '公開ページを、作業履歴・次タスク・主要リンクを見られる画面に変更。',
+    href: 'https://github.com/Kararemo481/gptcodexapp/pull/8'
+  },
+  {
     id: 'PR #6',
-    title: 'Prepared GitHub Pages deployment',
-    meta: 'Added Pages deployment notes and validation for the publish path.',
+    title: 'GitHub Pages 公開準備',
+    meta: 'Pages公開に必要な設定メモと検証項目を追加。',
     href: 'https://github.com/Kararemo481/gptcodexapp/pull/6'
   },
   {
     id: 'PR #4',
-    title: 'Added starter static app',
-    meta: 'Created the first public app surface with HTML, CSS, and JavaScript.',
+    title: '最初の静的アプリを追加',
+    meta: 'HTML、CSS、JavaScriptで最初の公開画面を作成。',
     href: 'https://github.com/Kararemo481/gptcodexapp/pull/4'
   },
   {
     id: 'PR #2',
-    title: 'Initial repository setup',
-    meta: 'Expanded the README, added gitignore rules, and created validation.',
+    title: 'リポジトリ初期設定',
+    meta: 'README、gitignore、検証ワークフローを追加。',
     href: 'https://github.com/Kararemo481/gptcodexapp/pull/2'
   }
 ];
 
 const nextTasks = [
-  'Choose the first real feature for the published app.',
-  'Add issue and pull request templates for repeatable work.',
-  'Replace the static activity data with generated repository data later.'
+  '公開アプリに入れる最初の本機能を決める。',
+  'issueテンプレートとPRテンプレートを追加して、次回以降の作業を楽にする。',
+  '作業履歴を手書きではなく自動生成できる形に育てる。'
 ];
 
 function formatViewport() {
@@ -36,7 +42,7 @@ function formatViewport() {
 
 function updateRuntimeDetails() {
   if (loadedNode) {
-    loadedNode.textContent = new Date().toLocaleTimeString([], {
+    loadedNode.textContent = new Date().toLocaleTimeString('ja-JP', {
       hour: '2-digit',
       minute: '2-digit'
     });
@@ -73,7 +79,7 @@ function renderActivity() {
       const link = document.createElement('a');
       link.className = 'activity-item__link';
       link.href = item.href;
-      link.textContent = 'Open';
+      link.textContent = '開く';
 
       body.append(title, meta);
       row.append(id, body, link);
