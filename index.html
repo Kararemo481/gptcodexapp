@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>gptcodexapp</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="shell" aria-label="gptcodexapp workspace">
+      <section class="workspace" aria-labelledby="workspace-title">
+        <div class="workspace__summary">
+          <p class="eyebrow">Repository cockpit</p>
+          <h1 id="workspace-title">gptcodexapp</h1>
+          <p class="summary-text">A small static workspace for shaping Codex-assisted GitHub experiments.</p>
+        </div>
+
+        <div class="status-grid" aria-label="Current repository status">
+          <article class="status-card">
+            <span class="status-card__label">Branch</span>
+            <strong>main</strong>
+          </article>
+          <article class="status-card">
+            <span class="status-card__label">Checks</span>
+            <strong>Validate</strong>
+          </article>
+          <article class="status-card">
+            <span class="status-card__label">Mode</span>
+            <strong>Static</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="next-title">
+        <div>
+          <p class="eyebrow">Next actions</p>
+          <h2 id="next-title">Build from a clean first screen</h2>
+        </div>
+        <ul class="task-list">
+          <li>
+            <span class="task-dot task-dot--done"></span>
+            <span>README and validation workflow are in place.</span>
+          </li>
+          <li>
+            <span class="task-dot task-dot--active"></span>
+            <span>Starter app files are ready for review.</span>
+          </li>
+          <li>
+            <span class="task-dot"></span>
+            <span>Pick the first real feature after merge.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="panel panel--split" aria-labelledby="details-title">
+        <div>
+          <p class="eyebrow">Runtime</p>
+          <h2 id="details-title">Local preview</h2>
+          <p class="panel-copy">Open this repository's <code>index.html</code> in a browser to preview the starter screen.</p>
+        </div>
+        <dl class="runtime-list" id="runtime-list">
+          <div>
+            <dt>Loaded</dt>
+            <dd data-runtime="loaded">checking</dd>
+          </div>
+          <div>
+            <dt>Viewport</dt>
+            <dd data-runtime="viewport">checking</dd>
+          </div>
+        </dl>
+      </section>
+    </main>
+
+    <script src="scripts/app.js" defer></script>
+  </body>
+</html>
