@@ -13,7 +13,12 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Inspect repository
+      - name: Validate expected files
         run: |
           test -f README.md
-          find . -maxdepth 3 -type f | sort
+          test -f index.html
+          test -f styles.css
+          test -f scripts/app.js
+
+      - name: Inspect repository
+        run: find . -maxdepth 3 -type f | sort
