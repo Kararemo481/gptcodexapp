@@ -3,49 +3,50 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>gptcodexapp 作業ログ</title>
+    <title>gptcodexapp TODOメモ</title>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <main class="shell" aria-label="gptcodexapp 作業ログダッシュボード">
+    <main class="shell" aria-label="gptcodexapp 作業ログとTODOメモ">
       <header class="topbar">
         <a class="brand" href="https://github.com/Kararemo481/gptcodexapp">gptcodexapp</a>
         <nav class="nav-actions" aria-label="プロジェクトリンク">
           <a href="https://github.com/Kararemo481/gptcodexapp/issues">課題</a>
           <a href="https://github.com/Kararemo481/gptcodexapp/pulls">プルリク</a>
           <a href="https://kararemo481.github.io/gptcodexapp/">公開ページ</a>
+          <a href="#memo-tool">TODOメモ</a>
         </nav>
       </header>
 
       <section class="hero" aria-labelledby="dashboard-title">
         <div class="hero__copy">
           <p class="eyebrow">公開作業ログ</p>
-          <h1 id="dashboard-title">作業ダッシュボード</h1>
-          <p class="summary-text">Codexで進めた最初のリポジトリ整備をまとめた画面。作った課題、マージ済みプルリク、チェック結果、次にやることをここで見られる。</p>
+          <h1 id="dashboard-title">作業とTODO</h1>
+          <p class="summary-text">Codexで進めたリポジトリ整備を見返しながら、次にやることをその場で書ける画面。入力したTODOは、このブラウザに保存される。</p>
         </div>
         <img class="hero__image" src="assets/workflow-map.svg" alt="課題からプルリク、CI、Pages公開までの流れ">
       </section>
 
-      <section class="metric-grid" aria-label="リポジトリの状態">
+      <section class="metric-grid" aria-label="リポジトリとメモの状態">
         <article class="metric-card">
           <span class="metric-card__label">マージ済みPR</span>
-          <strong>4</strong>
-          <span>#2, #4, #6, #8</span>
+          <strong data-metric-value="merged-prs">確認中</strong>
+          <span data-metric-detail="merged-prs">履歴から集計</span>
         </article>
         <article class="metric-card">
           <span class="metric-card__label">完了した課題</span>
-          <strong>4</strong>
-          <span>#1, #3, #5, #7</span>
+          <strong data-metric-value="closed-issues">確認中</strong>
+          <span data-metric-detail="closed-issues">履歴から集計</span>
         </article>
         <article class="metric-card">
-          <span class="metric-card__label">公開状態</span>
-          <strong>公開中</strong>
-          <span>GitHub Pages</span>
+          <span class="metric-card__label">メモ保存</span>
+          <strong data-metric-value="memo-mode">確認中</strong>
+          <span data-metric-detail="memo-mode">ブラウザ内</span>
         </article>
         <article class="metric-card">
-          <span class="metric-card__label">チェック</span>
-          <strong>成功</strong>
-          <span>Validate</span>
+          <span class="metric-card__label">TODO件数</span>
+          <strong data-metric-value="todo-count">0</strong>
+          <span data-metric-detail="todo-count">0件完了</span>
         </article>
       </section>
 
@@ -53,13 +54,14 @@
         <div>
           <p class="eyebrow">操作場所</p>
           <h2 id="links-title">よく使うリンク</h2>
-          <p class="panel-copy">リポジトリ、公開ページ、Actions、課題一覧へすぐ移動できる。</p>
+          <p class="panel-copy">リポジトリ、公開ページ、Actions、課題一覧、TODOメモへすぐ移動できる。</p>
         </div>
         <div class="link-grid">
           <a class="link-tile" href="https://github.com/Kararemo481/gptcodexapp">リポジトリ</a>
           <a class="link-tile" href="https://kararemo481.github.io/gptcodexapp/">公開ページ</a>
           <a class="link-tile" href="https://github.com/Kararemo481/gptcodexapp/actions">Actions</a>
           <a class="link-tile" href="https://github.com/Kararemo481/gptcodexapp/issues">課題一覧</a>
+          <a class="link-tile" href="#memo-tool">TODOメモ</a>
         </div>
       </section>
 
@@ -78,9 +80,37 @@
         <div>
           <p class="eyebrow">次</p>
           <h2 id="next-title">次にやると良いこと</h2>
-          <p class="panel-copy">公開はできた。ここからは「何のための道具にするか」を決めると一気に育てやすい。</p>
+          <p class="panel-copy">公開はできた。ここからは、小さい機能を足して動かしながら育てると早い。</p>
         </div>
         <ul class="task-list" id="task-list"></ul>
+      </section>
+
+      <section class="panel memo-panel" id="memo-tool" aria-labelledby="memo-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">TODOメモ</p>
+            <h2 id="memo-title">ブラウザに残すメモ</h2>
+          </div>
+          <span class="status-pill" data-todo-summary>0件</span>
+        </div>
+
+        <form class="todo-form" id="todo-form">
+          <label class="sr-only" for="todo-input">TODOを入力</label>
+          <input id="todo-input" name="todo" type="text" maxlength="80" autocomplete="off" placeholder="例: 次に直すところを書く">
+          <button type="submit">追加</button>
+        </form>
+
+        <div class="memo-actions" aria-label="TODO表示の切り替え">
+          <div class="filter-group" role="group" aria-label="表示">
+            <button type="button" class="filter-button is-active" data-todo-filter="all" aria-pressed="true">全部</button>
+            <button type="button" class="filter-button" data-todo-filter="open" aria-pressed="false">未完了</button>
+            <button type="button" class="filter-button" data-todo-filter="done" aria-pressed="false">完了</button>
+          </div>
+          <button type="button" class="filter-button filter-button--danger" id="clear-completed">完了を消す</button>
+        </div>
+
+        <ul class="todo-list" id="todo-list" aria-live="polite"></ul>
+        <p class="empty-state" id="todo-empty">まだメモなし。ひとつ書けば、ここが動き出す。</p>
       </section>
 
       <footer class="footer-status" aria-label="表示情報">
