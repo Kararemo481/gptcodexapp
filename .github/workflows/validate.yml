@@ -22,5 +22,12 @@ jobs:
           test -f assets/workflow-map.svg
           test -f .github/workflows/pages.yml
 
+      - name: Validate TODO memo wiring
+        run: |
+          grep -q 'id="memo-tool"' index.html
+          grep -q 'id="todo-form"' index.html
+          grep -q 'TODO_STORAGE_KEY' scripts/app.js
+          grep -q 'localStorage' scripts/app.js
+
       - name: Inspect repository
         run: find . -maxdepth 3 -type f | sort
