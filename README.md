@@ -18,7 +18,7 @@ After the workflow is enabled and a deployment succeeds, the expected site URL i
 
 `https://kararemo481.github.io/gptcodexapp/`
 
-This repository is currently private. GitHub Pages support for private repositories depends on the GitHub account plan and repository settings.
+The repository is public, so GitHub Pages can publish the static app with GitHub Free.
 
 ## Project Shape
 
