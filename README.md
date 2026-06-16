@@ -4,12 +4,19 @@ A starter repository for experimenting with Codex-assisted GitHub workflows.
 
 ## Status
 
-Initial setup is in progress.
+A dependency-free static app is available for the first project surface.
+
+## Preview
+
+Open `index.html` in a browser to view the app locally.
 
 ## Project Shape
 
-This repository starts with lightweight scaffolding so future pull requests have a clear place to land.
+- `index.html` defines the starter workspace markup.
+- `styles.css` contains the responsive visual system.
+- `scripts/app.js` updates lightweight runtime details in the page.
+- `.github/workflows/validate.yml` checks the expected repository files.
 
 ## Validation
 
-A basic GitHub Actions workflow checks that the repository can be cloned and inspected successfully.
+The GitHub Actions workflow confirms that the expected static app files are present and prints the repository file list.
