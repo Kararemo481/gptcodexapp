@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" role="img" aria-labelledby="title desc">
+  <title id="title">Repository workflow map</title>
+  <desc id="desc">A simple visual route from issue to pull request to validation to public site.</desc>
+  <rect width="720" height="360" rx="8" fill="#f7f8f5"/>
+  <path d="M76 246 C156 150 264 296 354 196 C444 96 564 150 644 78" fill="none" stroke="#1c6b5a" stroke-width="12" stroke-linecap="round"/>
+  <path d="M76 268 C172 190 264 322 370 230 C474 138 568 188 644 112" fill="none" stroke="#d59228" stroke-width="6" stroke-linecap="round" opacity="0.85"/>
+  <g fill="#ffffff" stroke="#172026" stroke-width="3">
+    <circle cx="86" cy="242" r="38"/>
+    <circle cx="244" cy="262" r="38"/>
+    <circle cx="402" cy="168" r="38"/>
+    <circle cx="572" cy="120" r="38"/>
+  </g>
+  <g font-family="Inter, Arial, sans-serif" fill="#172026" text-anchor="middle">
+    <text x="86" y="238" font-size="17" font-weight="700">Issue</text>
+    <text x="86" y="258" font-size="12">scope</text>
+    <text x="244" y="258" font-size="17" font-weight="700">PR</text>
+    <text x="244" y="278" font-size="12">review</text>
+    <text x="402" y="164" font-size="17" font-weight="700">CI</text>
+    <text x="402" y="184" font-size="12">green</text>
+    <text x="572" y="116" font-size="17" font-weight="700">Pages</text>
+    <text x="572" y="136" font-size="12">live</text>
+  </g>
+  <g fill="#c05662" opacity="0.18">
+    <rect x="108" y="58" width="92" height="20" rx="4"/>
+    <rect x="452" y="270" width="132" height="20" rx="4"/>
+    <rect x="488" y="300" width="84" height="20" rx="4"/>
+  </g>
+</svg>

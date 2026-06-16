@@ -1,33 +1,28 @@
 # gptcodexapp
 
-A starter repository for experimenting with Codex-assisted GitHub workflows.
+A public work log dashboard for a Codex-assisted GitHub repository setup.
 
 ## Status
 
-A dependency-free static app is available for the first project surface.
+The published site tracks the repository's early setup work, merged pull requests, closed issues, validation state, and next useful follow-ups.
 
-## Preview
-
-Open `index.html` in a browser to view the app locally.
-
-## GitHub Pages
-
-The repository includes a Pages deployment workflow at `.github/workflows/pages.yml`.
-
-After the workflow is enabled and a deployment succeeds, the expected site URL is:
+## Published Site
 
 `https://kararemo481.github.io/gptcodexapp/`
 
-The repository is public, so GitHub Pages can publish the static app with GitHub Free.
+## Local Preview
+
+Open `index.html` in a browser to view the app locally.
 
 ## Project Shape
 
-- `index.html` defines the starter workspace markup.
+- `index.html` defines the dashboard markup.
 - `styles.css` contains the responsive visual system.
-- `scripts/app.js` updates lightweight runtime details in the page.
+- `scripts/app.js` renders activity and next-step data.
+- `assets/workflow-map.svg` provides the workflow visual.
 - `.github/workflows/validate.yml` checks the expected repository files.
-- `.github/workflows/pages.yml` deploys the static app to GitHub Pages.
+- `.github/workflows/pages.yml` keeps a GitHub Actions Pages workflow available if the Pages source is switched back to Actions.
 
 ## Validation
 
-The GitHub Actions workflow confirms that the expected static app and deployment files are present, then prints the repository file list.
+The GitHub Actions workflow confirms that the expected dashboard files are present, then prints the repository file list.

@@ -3,72 +3,90 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>gptcodexapp</title>
+    <title>gptcodexapp work log</title>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <main class="shell" aria-label="gptcodexapp workspace">
-      <section class="workspace" aria-labelledby="workspace-title">
-        <div class="workspace__summary">
-          <p class="eyebrow">Repository cockpit</p>
-          <h1 id="workspace-title">gptcodexapp</h1>
-          <p class="summary-text">A small static workspace for shaping Codex-assisted GitHub experiments.</p>
-        </div>
+    <main class="shell" aria-label="gptcodexapp work log dashboard">
+      <header class="topbar">
+        <a class="brand" href="https://github.com/Kararemo481/gptcodexapp">gptcodexapp</a>
+        <nav class="nav-actions" aria-label="Project links">
+          <a href="https://github.com/Kararemo481/gptcodexapp/issues">Issues</a>
+          <a href="https://github.com/Kararemo481/gptcodexapp/pulls">Pull requests</a>
+          <a href="https://kararemo481.github.io/gptcodexapp/">Live site</a>
+        </nav>
+      </header>
 
-        <div class="status-grid" aria-label="Current repository status">
-          <article class="status-card">
-            <span class="status-card__label">Branch</span>
-            <strong>main</strong>
-          </article>
-          <article class="status-card">
-            <span class="status-card__label">Checks</span>
-            <strong>Validate</strong>
-          </article>
-          <article class="status-card">
-            <span class="status-card__label">Mode</span>
-            <strong>Static</strong>
-          </article>
+      <section class="hero" aria-labelledby="dashboard-title">
+        <div class="hero__copy">
+          <p class="eyebrow">Public work log</p>
+          <h1 id="dashboard-title">Repository dashboard</h1>
+          <p class="summary-text">A live snapshot of the first Codex-assisted setup run: issues opened, pull requests merged, checks passed, and the next useful moves.</p>
         </div>
+        <img class="hero__image" src="assets/workflow-map.svg" alt="Repository workflow route from issue to pull request to CI to Pages">
       </section>
 
-      <section class="panel" aria-labelledby="next-title">
+      <section class="metric-grid" aria-label="Repository metrics">
+        <article class="metric-card">
+          <span class="metric-card__label">Merged PRs</span>
+          <strong>3</strong>
+          <span>#2, #4, #6</span>
+        </article>
+        <article class="metric-card">
+          <span class="metric-card__label">Closed issues</span>
+          <strong>3</strong>
+          <span>#1, #3, #5</span>
+        </article>
+        <article class="metric-card">
+          <span class="metric-card__label">Site</span>
+          <strong>Live</strong>
+          <span>GitHub Pages</span>
+        </article>
+        <article class="metric-card">
+          <span class="metric-card__label">Checks</span>
+          <strong>Green</strong>
+          <span>Validate</span>
+        </article>
+      </section>
+
+      <section class="panel panel--split" aria-labelledby="links-title">
         <div>
-          <p class="eyebrow">Next actions</p>
-          <h2 id="next-title">Build from a clean first screen</h2>
+          <p class="eyebrow">Control room</p>
+          <h2 id="links-title">Project links</h2>
+          <p class="panel-copy">Fast access to the repository, published page, and current planning surface.</p>
         </div>
-        <ul class="task-list">
-          <li>
-            <span class="task-dot task-dot--done"></span>
-            <span>README and validation workflow are in place.</span>
-          </li>
-          <li>
-            <span class="task-dot task-dot--active"></span>
-            <span>Starter app files are ready for review.</span>
-          </li>
-          <li>
-            <span class="task-dot"></span>
-            <span>Pick the first real feature after merge.</span>
-          </li>
-        </ul>
+        <div class="link-grid">
+          <a class="link-tile" href="https://github.com/Kararemo481/gptcodexapp">Repository</a>
+          <a class="link-tile" href="https://kararemo481.github.io/gptcodexapp/">Published site</a>
+          <a class="link-tile" href="https://github.com/Kararemo481/gptcodexapp/actions">Actions</a>
+          <a class="link-tile" href="https://github.com/Kararemo481/gptcodexapp/issues">Issues</a>
+        </div>
       </section>
 
-      <section class="panel panel--split" aria-labelledby="details-title">
-        <div>
-          <p class="eyebrow">Runtime</p>
-          <h2 id="details-title">Local preview</h2>
-          <p class="panel-copy">Open this repository's <code>index.html</code> in a browser to preview the starter screen.</p>
+      <section class="panel" aria-labelledby="activity-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Activity</p>
+            <h2 id="activity-title">Merged work</h2>
+          </div>
+          <span class="status-pill">Current run</span>
         </div>
-        <dl class="runtime-list" id="runtime-list">
-          <div>
-            <dt>Loaded</dt>
-            <dd data-runtime="loaded">checking</dd>
-          </div>
-          <div>
-            <dt>Viewport</dt>
-            <dd data-runtime="viewport">checking</dd>
-          </div>
-        </dl>
+        <ol class="activity-list" id="activity-list"></ol>
       </section>
+
+      <section class="panel panel--split" aria-labelledby="next-title">
+        <div>
+          <p class="eyebrow">Next</p>
+          <h2 id="next-title">Useful follow-ups</h2>
+          <p class="panel-copy">The site is published. The next gains come from shaping the tool into something specific.</p>
+        </div>
+        <ul class="task-list" id="task-list"></ul>
+      </section>
+
+      <footer class="footer-status" aria-label="Runtime details">
+        <span>Loaded <strong data-runtime="loaded">checking</strong></span>
+        <span>Viewport <strong data-runtime="viewport">checking</strong></span>
+      </footer>
     </main>
 
     <script src="scripts/app.js" defer></script>
