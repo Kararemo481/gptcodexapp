@@ -1,91 +1,91 @@
 <!doctype html>
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>gptcodexapp work log</title>
+    <title>gptcodexapp 作業ログ</title>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <main class="shell" aria-label="gptcodexapp work log dashboard">
+    <main class="shell" aria-label="gptcodexapp 作業ログダッシュボード">
       <header class="topbar">
         <a class="brand" href="https://github.com/Kararemo481/gptcodexapp">gptcodexapp</a>
-        <nav class="nav-actions" aria-label="Project links">
-          <a href="https://github.com/Kararemo481/gptcodexapp/issues">Issues</a>
-          <a href="https://github.com/Kararemo481/gptcodexapp/pulls">Pull requests</a>
-          <a href="https://kararemo481.github.io/gptcodexapp/">Live site</a>
+        <nav class="nav-actions" aria-label="プロジェクトリンク">
+          <a href="https://github.com/Kararemo481/gptcodexapp/issues">課題</a>
+          <a href="https://github.com/Kararemo481/gptcodexapp/pulls">プルリク</a>
+          <a href="https://kararemo481.github.io/gptcodexapp/">公開ページ</a>
         </nav>
       </header>
 
       <section class="hero" aria-labelledby="dashboard-title">
         <div class="hero__copy">
-          <p class="eyebrow">Public work log</p>
-          <h1 id="dashboard-title">Repository dashboard</h1>
-          <p class="summary-text">A live snapshot of the first Codex-assisted setup run: issues opened, pull requests merged, checks passed, and the next useful moves.</p>
+          <p class="eyebrow">公開作業ログ</p>
+          <h1 id="dashboard-title">作業ダッシュボード</h1>
+          <p class="summary-text">Codexで進めた最初のリポジトリ整備をまとめた画面。作った課題、マージ済みプルリク、チェック結果、次にやることをここで見られる。</p>
         </div>
-        <img class="hero__image" src="assets/workflow-map.svg" alt="Repository workflow route from issue to pull request to CI to Pages">
+        <img class="hero__image" src="assets/workflow-map.svg" alt="課題からプルリク、CI、Pages公開までの流れ">
       </section>
 
-      <section class="metric-grid" aria-label="Repository metrics">
+      <section class="metric-grid" aria-label="リポジトリの状態">
         <article class="metric-card">
-          <span class="metric-card__label">Merged PRs</span>
-          <strong>3</strong>
-          <span>#2, #4, #6</span>
+          <span class="metric-card__label">マージ済みPR</span>
+          <strong>4</strong>
+          <span>#2, #4, #6, #8</span>
         </article>
         <article class="metric-card">
-          <span class="metric-card__label">Closed issues</span>
-          <strong>3</strong>
-          <span>#1, #3, #5</span>
+          <span class="metric-card__label">完了した課題</span>
+          <strong>4</strong>
+          <span>#1, #3, #5, #7</span>
         </article>
         <article class="metric-card">
-          <span class="metric-card__label">Site</span>
-          <strong>Live</strong>
+          <span class="metric-card__label">公開状態</span>
+          <strong>公開中</strong>
           <span>GitHub Pages</span>
         </article>
         <article class="metric-card">
-          <span class="metric-card__label">Checks</span>
-          <strong>Green</strong>
+          <span class="metric-card__label">チェック</span>
+          <strong>成功</strong>
           <span>Validate</span>
         </article>
       </section>
 
       <section class="panel panel--split" aria-labelledby="links-title">
         <div>
-          <p class="eyebrow">Control room</p>
-          <h2 id="links-title">Project links</h2>
-          <p class="panel-copy">Fast access to the repository, published page, and current planning surface.</p>
+          <p class="eyebrow">操作場所</p>
+          <h2 id="links-title">よく使うリンク</h2>
+          <p class="panel-copy">リポジトリ、公開ページ、Actions、課題一覧へすぐ移動できる。</p>
         </div>
         <div class="link-grid">
-          <a class="link-tile" href="https://github.com/Kararemo481/gptcodexapp">Repository</a>
-          <a class="link-tile" href="https://kararemo481.github.io/gptcodexapp/">Published site</a>
+          <a class="link-tile" href="https://github.com/Kararemo481/gptcodexapp">リポジトリ</a>
+          <a class="link-tile" href="https://kararemo481.github.io/gptcodexapp/">公開ページ</a>
           <a class="link-tile" href="https://github.com/Kararemo481/gptcodexapp/actions">Actions</a>
-          <a class="link-tile" href="https://github.com/Kararemo481/gptcodexapp/issues">Issues</a>
+          <a class="link-tile" href="https://github.com/Kararemo481/gptcodexapp/issues">課題一覧</a>
         </div>
       </section>
 
       <section class="panel" aria-labelledby="activity-title">
         <div class="section-heading">
           <div>
-            <p class="eyebrow">Activity</p>
-            <h2 id="activity-title">Merged work</h2>
+            <p class="eyebrow">作業履歴</p>
+            <h2 id="activity-title">マージした作業</h2>
           </div>
-          <span class="status-pill">Current run</span>
+          <span class="status-pill">現在の流れ</span>
         </div>
         <ol class="activity-list" id="activity-list"></ol>
       </section>
 
       <section class="panel panel--split" aria-labelledby="next-title">
         <div>
-          <p class="eyebrow">Next</p>
-          <h2 id="next-title">Useful follow-ups</h2>
-          <p class="panel-copy">The site is published. The next gains come from shaping the tool into something specific.</p>
+          <p class="eyebrow">次</p>
+          <h2 id="next-title">次にやると良いこと</h2>
+          <p class="panel-copy">公開はできた。ここからは「何のための道具にするか」を決めると一気に育てやすい。</p>
         </div>
         <ul class="task-list" id="task-list"></ul>
       </section>
 
-      <footer class="footer-status" aria-label="Runtime details">
-        <span>Loaded <strong data-runtime="loaded">checking</strong></span>
-        <span>Viewport <strong data-runtime="viewport">checking</strong></span>
+      <footer class="footer-status" aria-label="表示情報">
+        <span>読み込み <strong data-runtime="loaded">確認中</strong></span>
+        <span>画面サイズ <strong data-runtime="viewport">確認中</strong></span>
       </footer>
     </main>
 
