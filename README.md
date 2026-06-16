@@ -1,28 +1,28 @@
 # gptcodexapp
 
-A public work log dashboard for a Codex-assisted GitHub repository setup.
+Codexで進めたリポジトリ整備をまとめる公開作業ログダッシュボードです。
 
-## Status
+## 状態
 
-The published site tracks the repository's early setup work, merged pull requests, closed issues, validation state, and next useful follow-ups.
+公開ページでは、初期セットアップ、マージ済みプルリク、完了した課題、検証状態、次にやると良いことを確認できます。
 
-## Published Site
+## 公開ページ
 
 `https://kararemo481.github.io/gptcodexapp/`
 
-## Local Preview
+## ローカル確認
 
-Open `index.html` in a browser to view the app locally.
+`index.html` をブラウザで開くと、手元でも画面を確認できます。
 
-## Project Shape
+## ファイル構成
 
-- `index.html` defines the dashboard markup.
-- `styles.css` contains the responsive visual system.
-- `scripts/app.js` renders activity and next-step data.
-- `assets/workflow-map.svg` provides the workflow visual.
-- `.github/workflows/validate.yml` checks the expected repository files.
-- `.github/workflows/pages.yml` keeps a GitHub Actions Pages workflow available if the Pages source is switched back to Actions.
+- `index.html`: ダッシュボード画面のHTML
+- `styles.css`: 日本語表示に合わせたレスポンシブCSS
+- `scripts/app.js`: 作業履歴と次タスクの表示処理
+- `assets/workflow-map.svg`: 作業の流れを示す図
+- `.github/workflows/validate.yml`: 必要ファイルがあるか確認する検証ワークフロー
+- `.github/workflows/pages.yml`: PagesをActions公開に戻したい場合に使える公開ワークフロー
 
-## Validation
+## 検証
 
-The GitHub Actions workflow confirms that the expected dashboard files are present, then prints the repository file list.
+GitHub Actionsの `Validate` が、必要なダッシュボード用ファイルの存在を確認します。
